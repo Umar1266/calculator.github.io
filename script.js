@@ -1,30 +1,41 @@
-function c(button){
-    var arr=document.querySelector("#cal").value;
-    var size=arr.length;
-    if (arr=="") {
-        if(button=="+"||button=="-"||button=="x"||button=="/"||button=="%"||button==")"){
-            document.querySelector("#cal").value="";
-        }
-        else{
-        document.querySelector("#cal").value+=button;
-        }
-    } else {
-        if (arr[size-1]=="+"||arr[size-1]=="-"||arr[size-1]=="x"||arr[size-1]=="/"||arr[size-1]=="."||arr[size-1]=="%"||arr[size-1]==")"||arr[size-1]=="(") {
-            if(button=="+"||button=="-"||button=="x"||button=="/"||button=="%"||button=="."||button==")"||button=="(")
-            document.querySelector("#cal").value+="";
-            else {
-                document.querySelector("#cal").value+=button;
-            }     
-        }
-        else {
-            document.querySelector("#cal").value+=button;
-        }
-    }    
+// 
+
+
+// script.js
+
+function c(button) {
+    const display = document.querySelector("#cal");
+
+    if (button === "") {
+        display.textContent = "";
+        return;
+    }
+
+    let current = display.textContent;
+
+    if (button === "=") {
+        solve();
+        return;
+    }
+
+    if (button === "AC") {
+        display.textContent = "";
+        return;
+    }
+
+    if (button === "x") button = "*";
+
+    display.textContent += button;
 }
-function cl(){
-    document.querySelector("#cal").value="";
-}
-function solve(){
-    var problem=document.querySelector("#cal").value;
-    document.querySelector("#cal").value=eval(problem);
+
+function solve() {
+    const display = document.querySelector("#cal");
+    let problem = display.textContent;
+
+    try {
+        const result = eval(problem);
+        display.textContent = result;
+    } catch {
+        display.textContent = "Error";
+    }
 }

@@ -1,4 +1,4 @@
-<html lang="en">
+<!-- <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,5 +25,71 @@
             </table>
         </div>
     </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+
+<!-- Link external CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="full">
+    <div class="table">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <div id="cal"></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td onclick="c('(')">(</td>
+                <td onclick="c(')')">)</td>
+                <td onclick="c('%')">%</td>
+                <td onclick="c('/')">/</td>
+            </tr>
+
+            <tr>
+                <td onclick="c('7')">7</td>
+                <td onclick="c('8')">8</td>
+                <td onclick="c('9')">9</td>
+                <td onclick="c('x')">x</td>
+            </tr>
+
+            <tr>
+                <td onclick="c('4')">4</td>
+                <td onclick="c('5')">5</td>
+                <td onclick="c('6')">6</td>
+                <td onclick="c('-')">-</td>
+            </tr>
+
+            <tr>
+                <td onclick="c('1')">1</td>
+                <td onclick="c('2')">2</td>
+                <td onclick="c('3')">3</td>
+                <td onclick="c('+')">+</td>
+            </tr>
+
+            <tr>
+                <td onclick="c('AC')">AC</td>
+                <td onclick="c('0')">0</td>
+                <td onclick="c('.')">.</td>
+                <td onclick="c('=')">=</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Link external JS -->
+<script src="script.js"></script>
+
 </body>
 </html>
